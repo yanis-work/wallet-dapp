@@ -1,0 +1,211 @@
+/* Reset et base pleine hauteur + largeur */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f6f8;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  box-sizing: border-box;
+}
+
+/* box-sizing global */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* App container en flex column full viewport */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* Pleine hauteur écran */
+  width: 100vw;
+  /* Pleine largeur écran */
+  justify-content: flex-start;
+  align-items: center;
+  padding: 60px 20px 40px;
+  /* 60px top pour nav fixe */
+  background-color: #f4f6f8;
+  overflow-x: hidden;
+  /* Pas de scroll horizontal */
+}
+
+/* Conteneur principal */
+.container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 500px;
+  width: 90vw;
+  /* Responsive */
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Logo */
+.logo {
+  font-size: 48px;
+  color: #3c3cce;
+  margin-bottom: 20px;
+}
+
+/* Titres */
+h2 {
+  font-size: 28px;
+  margin: 10px 0;
+}
+
+/* Texte important ETH */
+.eth {
+  font-weight: bold;
+  color: #3c3cce;
+}
+
+/* Flex containers pour wallet */
+.wallet__flex {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.walletG,
+.walletD {
+  background: #f0f2f5;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Sous-titres */
+h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  border-color: #3c3cce;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(60, 60, 206, 0.2);
+}
+
+/* Boutons */
+button {
+  padding: 10px 20px;
+  background-color: #3c3cce;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #4f4fff;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Messages d'erreur */
+.error {
+  color: #d9534f;
+  background: #ffe5e5;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+}
+
+/* Messages succès */
+.success {
+  color: #28a745;
+  background: #e6f4ea;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+}
+
+/* Affichage compte */
+.account {
+  font-size: 14px;
+  color: #555;
+  background: #f9f9f9;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: inline-block;
+  word-break: break-all;
+  max-width: 100%;
+}
+
+/* Responsive desktop */
+@media (min-width: 600px) {
+  .wallet__flex {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .walletG,
+  .walletD {
+    width: 48%;
+  }
+}
+
+/* Responsive mobile */
+@media (max-width: 480px) {
+  .wallet__flex {
+    flex-direction: column;
+  }
+
+  .walletG,
+  .walletD {
+    width: 100%;
+  }
+}
+
+/* Navigation fixe en haut */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: #f4f6f8;
+  padding: 10px 0;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.nav button {
+  font-weight: bold;
+  background-color: #2d2de0;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.nav button:hover {
+  background-color: #1f1fb6;
+}
